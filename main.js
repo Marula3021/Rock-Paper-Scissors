@@ -20,10 +20,43 @@ function getComputerChoice() {
   return computerResult.toLowerCase();
 }
 
-console.log(getComputerChoice());
+// console.log(getComputerChoice());
 
 function getHumanChoice() {
   return prompt("Chose between rock, paper or scissors").toLowerCase();
 }
 
-console.log(getHumanChoice());
+// console.log(getHumanChoice());
+
+function playAgain() {
+  let message = prompt("Do you want to play again?", "yes");
+
+  if (message === "yes") {
+    playGame();
+  } else if (message === "no") {
+    alert("Thank you for playing");
+  } else if (!message) {
+    alert("Too bad ! See you next time :)");
+  } else {
+    let attempts = 0;
+    while (attempts < 3) {
+      alert("Wrong answer! Please answer with 'yes' or 'no'.");
+      message = prompt("Do you want to play again? (yes or no)", "yes");
+      if (!message) {
+        alert("Too bad ! See you next time :)");
+        return;
+      }
+      if (message === "yes") {
+        playGame();
+        return;
+      } else if (message === "no") {
+        alert("Thank you for playing!");
+        return;
+      }
+      attempts++;
+    }
+    alert("Too many invalid attempts. Exiting the game.");
+  }
+}
+
+// console.log(playAgain());
