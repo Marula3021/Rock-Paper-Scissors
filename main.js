@@ -20,4 +20,10 @@ function getComputerChoice() {
   return computerResult.toLowerCase();
 }
 
-console.log(getComputerChoice())
+console.log(getComputerChoice());
+
+function getHumanChoice() {
+  return prompt("Chose between rock, paper or scissors").toLowerCase();
+}
+
+console.log(getHumanChoice());
