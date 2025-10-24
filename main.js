@@ -26,7 +26,7 @@ function getHumanChoice() {
   let humanMessage = prompt("Choose between rock, paper or scissors");
 
   if (!humanMessage) {
-    alert("Quitting already? The computer was just getting started 😜");
+    alert("Quitting already? The computer was just getting started");
     return;
   }
 
@@ -153,4 +153,4 @@ function playGame() {
   playAgain();
 }
 
-playGame();
+// playGame();
