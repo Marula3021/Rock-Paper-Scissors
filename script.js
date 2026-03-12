@@ -28,49 +28,12 @@ function getHumanChoice() {
 
 // console.log(getHumanChoice());
 
-function playAgain() {
-  let message = prompt("Do you want to play again?", "yes or no");
-
-  if (!message) {
-    alert("Too bad ! See you next time :)");
-    return;
-  }
-
-  message = message.toLowerCase();
-
-  if (message === "yes") {
-    playGame();
-  } else if (message === "no") {
-    alert("Thank you for playing");
-    return;
-  } else {
-    let attempts = 0;
-    while (attempts < 2) {
-      alert("Wrong answer! Please answer with 'yes' or 'no'.");
-      message = prompt("Do you want to play again? (yes or no)", "yes");
-      if (!message) {
-        alert("Too bad ! See you next time :)");
-        return;
-      }
-
-      message = message.toLowerCase();
-
-      if (message === "yes") {
-        playGame();
-        return;
-      } else if (message === "no") {
-        alert("Thank you for playing!");
-        return;
-      }
-      attempts++;
-    }
-    alert("Too many invalid attempts. Exiting the game.");
-  }
-}
-
-// console.log(playAgain());
-
 function playGame() {
+
+  let keepPlaying = true;
+
+  while(keepPlaying) {
+
   let humanScore = 0;
   let computerScore = 0;
   let round = 0;
@@ -136,7 +99,14 @@ function playGame() {
       `After ${round} rounds, computer wins the game! Final Score: ${computerScore} - ${humanScore}`
     );
   }
-  playAgain();
+  
+  let answer = prompt("Do you want to play again? (yes or no)");
+    if (!answer || answer.toLowerCase() !== "yes") {
+      keepPlaying = false;
+      alert("Thank you for playing!");
+    }
+  }
+
 }
 
-// playGame();
+playGame( );
