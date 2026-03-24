@@ -8,8 +8,8 @@ let gameOver = false;
 // <!-- WELCOME SCREEN -->
 
 function startGame() {
-  document.getElementById("welcome-screen").classList.add("hidden");
-  document.getElementById("game-screen").classList.add("visible");
+  document.getElementById("welcome-screen").classList.toggle("hidden");
+  document.getElementById("game-screen").classList.toggle("visible");
 }
 
 // <!-- GAME OVERLAY -->
@@ -84,13 +84,13 @@ function resetGame() {
   document.getElementById("round").textContent = round;
   document.getElementById("result").textContent = "Choose your weapon";
   document.getElementById("result-emoji").textContent = "";
-  document.getElementById("result-emoji").classList.remove("fade");
+  document.getElementById("result-emoji").classList.toggle("fade");
   document.getElementById("human-choice-display").textContent = "YOU";
   document.getElementById("computer-choice-display").textContent = "CPU";
-  document.getElementById("modal-overlay").classList.remove("show");
+  document.getElementById("modal-overlay").classList.toggle("show");
 }
 function quitGame() {
   resetGame();
-  document.getElementById("welcome-screen").classList.remove("hidden");
-  document.getElementById("game-screen").classList.remove("visible");
+  document.getElementById("welcome-screen").classList.toggle("hidden");
+  document.getElementById("game-screen").classList.toggle("visible");
 }
