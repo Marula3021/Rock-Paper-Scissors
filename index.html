@@ -1,11 +1,80 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rock Paper Scissors</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <script src="./script.js">
-    </script>
+    <!-- WELCOME SCREEN -->
+    <div id="welcome-screen">
+      <div class="logo">✊ 🖐️ ✌️</div>
+      <h1 class="welcome-title">Rock Paper Scissors</h1>
+      <p class="welcome-subtitle">First to 5 wins the game</p>
+      <button class="play-btn" onclick="startGame()">PLAY GAME</button>
+    </div>
+
+    <!-- GAME SCREEN -->
+
+    <div id="game-screen">
+      <p class="game-title">Rock Paper Scissors</p>
+
+      <div class="scoreboard">
+        <div class="score-item">
+          <div class="score-label">You</div>
+          <div class="score-number" id="human-score">0</div>
+        </div>
+        <div class="score-item">
+          <div class="score-label">Round</div>
+          <div class="score-number" id="round">1</div>
+        </div>
+        <div class="score-item">
+          <div class="score-label">Computer</div>
+          <div class="score-number" id="computer-score">0</div>
+        </div>
+      </div>
+      <div id="frameboard">
+        <div id="human-choice-display" class="choice-frame">YOU</div>
+        <div id="result-emoji"></div>
+        <div id="computer-choice-display" class="choice-frame">CPU</div>
+      </div>
+
+      <p id="result">Choose your weapon!</p>
+
+      <div class="choices">
+        <button class="choice-btn" onclick="playRound('rock')">
+          ✊ <span class="label">Rock</span>
+        </button>
+        <button class="choice-btn" onclick="playRound('paper')">
+          🖐️ <span class="label">Paper</span>
+        </button>
+        <button class="choice-btn" onclick="playRound('scissors')">
+          ✌️ <span class="label">Scissors</span>
+        </button>
+      </div>
+
+      <!-- MODAL -->
+      <div id="modal-overlay">
+        <div id="modal">
+          <div id="modal-emoji"></div>
+          <p id="modal-message"></p>
+          <p id="modal-score"></p>
+          <div class="modal-buttons">
+            <button class="modal-btn primary" onclick="resetGame()">
+              PLAY AGAIN
+            </button>
+            <button class="modal-btn secondary" onclick="quitGame()">
+              QUIT
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
   </body>
 </html>
